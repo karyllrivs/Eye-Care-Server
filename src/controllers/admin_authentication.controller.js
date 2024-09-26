@@ -74,6 +74,9 @@ const adminLogin = async (req, res) => {
     res.cookie(AUTH_COOKIE_NAME, authToken, {
       maxAge: 24 * 60 * 60 * 1000, //equivalent to one day
       path: "/",
+      hhtpOnly: true,
+        secure: true,
+        sameSite: "None"
     });
     return res
       .status(200)
