@@ -1,0 +1,47 @@
+const { Router } = require("express");
+const authentication = require("./authentication.js");
+const profile = require("./profile.js");
+const order = require("./order.js");
+const consultation = require("./consultation.js");
+const shopping_cart = require("./shopping_cart.js");
+const product = require("./product.js");
+const public_files = require("./public_files.js");
+const category = require("./category.js");
+const three_d_object = require("./three_d_object.js");
+const admin = require("./admin.js");
+const rating = require("./rating.js");
+const paymongo = require("./paymongo.js");
+const personnel = require("./personnel.js");
+const patient = require("./patient.js");
+const analytics = require("./analytics.js");
+const policy = require("./policy.js");
+const email = require("./email.js");
+const consultation_slots = require("./consultation_slots.js");
+const payment = require("./payment.js");
+const google_authentication = require("./google_authentication.js");
+
+const router = Router();
+
+module.exports = () => {
+  public_files(router);
+  authentication(router);
+  profile(router);
+  category(router);
+  product(router);
+  order(router);
+  consultation(router);
+  shopping_cart(router);
+  three_d_object(router);
+  admin(router);
+  rating(router);
+  paymongo(router);
+  personnel(router);
+  patient(router);
+  analytics(router);
+  policy(router);
+  email(router);
+  consultation_slots(router);
+  payment(router);
+  google_authentication(router);
+  return router;
+};
