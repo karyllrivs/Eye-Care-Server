@@ -6,6 +6,7 @@ const compression = require("compression");
 const cors = require("cors");
 const { config } = require("dotenv");
 const mongoose = require("mongoose");
+const routers = require("./routers/index.js");
 
 config();
 const { PORT, MONGODB_URI, MONGODB_NAME } = process.env;
@@ -22,18 +23,7 @@ app.use(
 app.use(compression());
 app.use(cookieParser());
 app.use(bodyParser.json());
-
-// Example routes
-app.get('/api/products', (req, res) => {
-  // Logic to fetch products
-  res.json({ message: "Here are your products" });
-});
-
-app.post('/api/login', (req, res) => {
-  // Logic for user login
-  const { username, password } = req.body;
-  res.json({ message: `Logging in ${username}` });
-});
+app.use("/api", routers());
 
 // MongoDB connection
 mongoose.Promise = Promise;
