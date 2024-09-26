@@ -1,3 +1,5 @@
+const { config } = require("dotenv");
+config(); 
 const { get, merge } = require("lodash");
 const {
   getUserBySessionToken,
