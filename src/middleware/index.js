@@ -18,6 +18,7 @@ const isAuthenticated = async (req, res, next) => {
         return res
           .status(403)
           .json({
+            sessionToken,
             message:
               "This request is forbidden. Login to your account first to proceed.",
           })
