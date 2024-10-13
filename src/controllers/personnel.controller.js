@@ -75,7 +75,7 @@ const createPersonnelAccount = async (req, res) => {
     console.log(error);
     return res
       .status(500)
-      .json({ message: "An internal server error occurred." })
+      .json({ message: "Fill all required fields." })
       .end();
   }
 };
